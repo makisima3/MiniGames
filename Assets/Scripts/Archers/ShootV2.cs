@@ -7,6 +7,7 @@ public class ShootV2 : MonoBehaviour, IPointerDownHandler,IPointerUpHandler,IDra
 {
     [SerializeField] public GameObject arrowPrefab;
     [SerializeField] public GameObject Player;
+    [SerializeField] public GameObject spawnPoint;
     [SerializeField] public TrajectoryRenderer trajectory;
 
     public float shootForce = 10;
@@ -18,9 +19,9 @@ public class ShootV2 : MonoBehaviour, IPointerDownHandler,IPointerUpHandler,IDra
     // Start is called before the first frame update
     void Start()
     {
-        newArrow = Instantiate(arrowPrefab);
-
-        newArrow.transform.position = Player.transform.position;
+        newArrow = Instantiate(arrowPrefab,spawnPoint.transform);
+        
+        newArrow.transform.position = spawnPoint.transform.position;
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class ShootV2 : MonoBehaviour, IPointerDownHandler,IPointerUpHandler,IDra
     {
         startMousePosition = Camera.main.ScreenToWorldPoint(eventData.position);
         //Debug.Log(startMousePosition);
+        Player.GetComponent<Animator>().SetBool("touch_bool", true);
     }
 
 
@@ -47,15 +49,24 @@ public class ShootV2 : MonoBehaviour, IPointerDownHandler,IPointerUpHandler,IDra
             
             newArrow.GetComponent<Rigidbody2D>().isKinematic = false;
             newArrow.GetComponent<Rigidbody2D>().AddForce(startMousePosition - endMousePosition * shootForce, ForceMode2D.Impulse);
+            newArrow.transform.SetParent(null);
             newArrow = null;
             StartCoroutine(Reload());
+            
         }
+
+        
+
+        Player.GetComponent<Animator>().SetBool("touch_bool", false);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         endMousePosition = Camera.main.ScreenToWorldPoint(eventData.position);
-        trajectory.ShowTrajectory(Player.gameObject.transform.position, startMousePosition - endMousePosition * shootForce);
+
+        Player.GetComponent<Animator>().SetFloat("aim_float", Mathf.Clamp(startMousePosition.y - endMousePosition.y,0,1));
+
+        trajectory.ShowTrajectory(spawnPoint.transform.position, startMousePosition - endMousePosition * shootForce);
         //Debug.Log(startMousePosition - endMousePosition * shootForce);
     }
 
@@ -63,9 +74,9 @@ public class ShootV2 : MonoBehaviour, IPointerDownHandler,IPointerUpHandler,IDra
     {
         yield return new WaitForSeconds(1);
 
-        newArrow = Instantiate(arrowPrefab);
+        newArrow = Instantiate(arrowPrefab, spawnPoint.transform);
 
-        newArrow.transform.position = Player.transform.position;
+        newArrow.transform.position = spawnPoint.transform.position;
     }
 
  
