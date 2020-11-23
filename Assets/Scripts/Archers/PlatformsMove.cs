@@ -7,15 +7,9 @@ public class PlatformsMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         int rnd = Random.Range(0, 2);
 
-        if(rnd == 0)
+        if (rnd == 0)
         {
             StartCoroutine(MoveUp());
         }
@@ -23,25 +17,50 @@ public class PlatformsMove : MonoBehaviour
         {
             StartCoroutine(MoveDown());
         }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 
     IEnumerator MoveDown()
     {
-        while(transform.position.y > -3)
+        while (transform.position.y > -3)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.1f);
-            yield return new WaitForSeconds(0.6f);
+            int rnd = Random.Range(0, 11);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.08f);
+            if (rnd != 10)
+            {
+                yield return new WaitForSeconds(0.01f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
         }
 
+
         StartCoroutine(MoveUp());
+
     }
 
     IEnumerator MoveUp()
     {
         while (transform.position.y < 1.5f)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.1f);
-            yield return new WaitForSeconds(0.1f);
+            int rnd = Random.Range(0, 11);
+            transform.position = new Vector2(transform.position.x, transform.position.y + 0.08f);
+            if(rnd != 10)
+            {
+                yield return new WaitForSeconds(0.01f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
+            
         }
 
         StartCoroutine(MoveDown());
