@@ -27,9 +27,11 @@ public class HitTriger : MonoBehaviour
 
             if (name == "Player1")
             {
-                PlayersScore.instanse.Player1HP--;
-
+                PlayersScore.instanse.Player1HP--;               
                 PlayersScore.instanse.Player1HPText.text = "HP = " + PlayersScore.instanse.Player1HP;
+
+                Destroy(GameObject.Find(PlayersScore.instanse.player1Hp[PlayersScore.instanse.player1Hp.Count - 1].gameObject.name));
+                PlayersScore.instanse.player1Hp.RemoveAt(PlayersScore.instanse.player1Hp.Count - 1);
 
                 if (PlayersScore.instanse.Player1HP <= 0)
                 {
@@ -41,8 +43,10 @@ public class HitTriger : MonoBehaviour
             if (name == "Player2")
             {
                 PlayersScore.instanse.Player2HP--;
-
                 PlayersScore.instanse.Player2HPText.text = "HP = " + PlayersScore.instanse.Player2HP;
+
+                Destroy(GameObject.Find(PlayersScore.instanse.player2Hp[PlayersScore.instanse.player2Hp.Count - 1].gameObject.name));
+                PlayersScore.instanse.player2Hp.RemoveAt(PlayersScore.instanse.player2Hp.Count - 1);
 
                 if (PlayersScore.instanse.Player2HP <= 0)
                 {
