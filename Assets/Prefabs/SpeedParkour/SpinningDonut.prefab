@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8740739320266491038}
   - component: {fileID: 1014838151917125048}
-  - component: {fileID: 1015178539595904040}
   - component: {fileID: 2942606977334134828}
   - component: {fileID: -8551920318131058922}
+  - component: {fileID: 2676050011717076352}
   m_Layer: 0
   m_Name: SpinningDonut
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4532953230026737497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.72, y: 0.61, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalPosition: {x: -22.607, y: -21.277, z: 0}
+  m_LocalScale: {x: 0.802422, y: 0.802422, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 6d2228a8c2eea4146bb447307aec83f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,35 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &1015178539595904040
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4532953230026737497}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.06546688, y: -0.04644627}
-  - {x: -0.06661557, y: 0.046902526}
-  - {x: -0.040537704, y: 0.06724773}
-  - {x: 0.038306613, y: 0.066959746}
-  - {x: 0.06599108, y: 0.043180097}
-  - {x: 0.065290675, y: -0.045413557}
-  - {x: 0.037973218, y: -0.06849259}
-  - {x: -0.036274143, y: -0.06700362}
-  - {x: -0.06459742, y: -0.044572014}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &2942606977334134828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +111,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+--- !u!58 &2676050011717076352
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532953230026737497}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.4468714

@@ -20,7 +20,7 @@ public class ChocolateWallController : MonoBehaviour
     public void WallDown()
     {
         transform
-            .DOMoveY(positionYWhenWallDawn.y, downDelay)
+            .DOLocalMoveY(positionYWhenWallDawn.y, downDelay)
             .SetEase(easeOnDown)
             .OnComplete(WallUp);
     }
@@ -28,7 +28,7 @@ public class ChocolateWallController : MonoBehaviour
     public void WallUp()
     {
         transform
-            .DOMoveY(positionYWhenWallUp.y, upDelay)
+            .DOLocalMoveY(positionYWhenWallUp.y, upDelay)
             .SetEase(easeOnUp)
             .OnComplete(WallDown);
     }
