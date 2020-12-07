@@ -8,7 +8,7 @@ public class DropDonut : MonoBehaviour, IMoveHandler
 {
     [SerializeField] public float speed;
     [SerializeField] float rotationSpeed;
-    [SerializeField] float dropDelay = 3f;
+    [SerializeField] float dropDelay = 5f;
     [SerializeField] Transform dropSpawnPoint;
 
     private bool onMove = false;
