@@ -60,7 +60,7 @@ namespace Assets.Scripts.Duel
         {
             if (moveUp == true)
             {
-                if (transform.position.y <= 3)
+                if (transform.position.y <= 2)
                 {
                     var moveForce = new Vector3(0, speed);
                     transform.position += moveForce;
@@ -69,7 +69,7 @@ namespace Assets.Scripts.Duel
             }
             else
             {
-                if (transform.position.y >= -3)
+                if (transform.position.y >= -4)
                 {
                     var moveForce = new Vector3(0, -speed);
                     transform.position += moveForce;
