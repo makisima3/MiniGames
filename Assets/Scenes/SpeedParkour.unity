@@ -826,7 +826,7 @@ MonoBehaviour:
   jumpForce: 6
   onGround: 0
   groundChek: {fileID: 2042277423}
-  groundRadius: 0.2
+  groundRadius: 0.1
   wtfIsGround:
     serializedVersion: 2
     m_Bits: 16
@@ -1023,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1870643035046305502, guid: 3983a7975a9ee0a418857a1760847126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.32
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1870643035046305502, guid: 3983a7975a9ee0a418857a1760847126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   jumpForce: 6
   onGround: 0
   groundChek: {fileID: 554299895}
-  groundRadius: 0.2
+  groundRadius: 0.1
   wtfIsGround:
     serializedVersion: 2
     m_Bits: 16
@@ -3087,7 +3087,7 @@ PrefabInstance:
       objectReference: {fileID: 403086751}
     - target: {fileID: 1870643035046305502, guid: 3983a7975a9ee0a418857a1760847126, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.153
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 1870643035046305502, guid: 3983a7975a9ee0a418857a1760847126, type: 3}
       propertyPath: m_LocalPosition.y
