@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Duel
 {
@@ -12,6 +13,8 @@ namespace Assets.Scripts.Duel
         public Transform bulletSpawner;
 
         public int hp = 3;
+
+        public Text winText;
 
         public GameObject bulletPrefab;
         public float reloarSpeed = 1;
@@ -52,8 +55,12 @@ namespace Assets.Scripts.Duel
             //    {
             //        StartCoroutine(PlayerFinish());
             //    }
-                
+
             //}
+
+            if (hp <= 0)
+                StartCoroutine(GameOver());
+
         }
 
         private void DoMove()
@@ -106,6 +113,30 @@ namespace Assets.Scripts.Duel
 
             Time.timeScale = 0;
         }
+
+        public IEnumerator GameOver()
+        {
+            Destroy(GetComponent<HitTriger>());
+
+            if(gameObject.name == "Player1")
+            {
+                winText.text = "Player2 Win";
+            }
+            else
+            {
+                winText.text = "Player1 win";
+            }
+       
+            for (float i = 1; i <= 0; i =- 0.1f)
+            {
+                Time.timeScale = i;
+
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            Time.timeScale = 0;
+        }
+
 
     }
 }

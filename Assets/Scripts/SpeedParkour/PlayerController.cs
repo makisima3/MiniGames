@@ -15,25 +15,44 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask wtfIsGround;
 
     private Rigidbody2D rb;
-
+    private Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+
     }
 
     public void MoveLeft()
     {
+        anim.SetBool("isJumping", false);
+        anim.SetBool("isRunning", true);
+
+        transform.rotation = new Quaternion(0, 180, 0, 1);
+
         rb.AddForce(Vector2.left * speed, ForceMode2D.Impulse);
     }
 
     public void MoveRight()
     {
+        anim.SetBool("isJumping", false);
+        anim.SetBool("isRunning", true);
+
+        transform.rotation = new Quaternion(0, 0, 0, 1);
+
         rb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
     }
 
     public void Jump()
     {
+        anim.SetBool("isRunning", false);
+        anim.SetBool("isJumping", true);
+
         onGround = Physics2D.OverlapCircle(groundChek.position, groundRadius, wtfIsGround);
 
         if (onGround)
