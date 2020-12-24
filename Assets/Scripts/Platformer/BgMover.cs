@@ -20,11 +20,11 @@ public class BgMover : MonoBehaviour
         firtPlatform.transform.position += new Vector3(speed, 0);
         SecondPlatform.transform.position += new Vector3(speed, 0);
 
-        if (firtPlatform.transform.position.x <= -20)
-            firtPlatform.transform.position = new Vector2(20, 0);
+        if (firtPlatform.transform.position.x <= -19.976f)
+            firtPlatform.transform.position = new Vector2(19.976f, 0);
 
-        if (SecondPlatform.transform.position.x <= -20)
-            SecondPlatform.transform.position = new Vector2(20, 0);
+        if (SecondPlatform.transform.position.x <= -19.976f)
+            SecondPlatform.transform.position = new Vector2(19.976f, 0);
 
         if (TrapSpawner.Instance.CurrentTrup != null)
         {

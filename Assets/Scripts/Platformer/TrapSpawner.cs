@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TrapSpawner : MonoBehaviour
 {
@@ -17,6 +19,13 @@ public class TrapSpawner : MonoBehaviour
     public bool isGame = true;
 
     public Coroutine trapSpawnDelay;
+
+    public Text endPanelText;
+    public GameObject EndPanel;
+
+    public GameObject bgMover;
+
+    public ParticleSystem particleSystem1, particleSystem2;
 
     private bool isOnStart = true;
 
@@ -57,5 +66,24 @@ public class TrapSpawner : MonoBehaviour
     {
         //Destroy(GetComponent<TrapSpawner>());
         Debug.Log("GameOver");
+
+        Time.timeScale = 0;
+
+        Destroy(bgMover.GetComponent<BgMover>());
+
+        endPanelText.text = TrupTrigger.name + "the Winner";
+        particleSystem1.gameObject.SetActive(true);
+        particleSystem2.gameObject.SetActive(true);
+        EndPanel.SetActive(true);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextGame()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
