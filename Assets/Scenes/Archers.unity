@@ -2064,6 +2064,7 @@ GameObject:
   - component: {fileID: 1778441310}
   - component: {fileID: 1778441312}
   - component: {fileID: 1778441311}
+  - component: {fileID: 1778441313}
   m_Layer: 5
   m_Name: BackGroundImagelvl2
   m_TagString: Untagged
@@ -2128,6 +2129,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778441309}
   m_CullTransparentMesh: 0
+--- !u!95 &1778441313
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778441309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f5c9b463a05f3d4eab8ed4650b9e433, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1785125676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2488,7 +2508,7 @@ Animator:
   m_GameObject: {fileID: 1961803563}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffd9f856d48e3c9459ae3b6598b9e9ef, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4f5c9b463a05f3d4eab8ed4650b9e433, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2853,7 +2873,7 @@ Animator:
   m_GameObject: {fileID: 2117736671}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7151eeb4761841843b66c71737340df1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 909c1c993d11c29479cb153b79ac41e2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
