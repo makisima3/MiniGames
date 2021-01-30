@@ -16,9 +16,28 @@ namespace Assets.Scripts.Platformer
 
         public float jumpForce;
 
+        public Animator anim;
+
         private void Awake()
         {
-           
+            
+        }
+
+        private void Update()
+        {
+            onGround = Physics2D.OverlapCircle(groundChek.position, groundRadius, wtfIsGround);
+
+            if (onGround)
+            {
+                anim.SetBool("isJumping", false);
+                anim.SetBool("touchFloor", true);
+            }
+            else
+            {
+                anim.SetBool("isJumping", true);
+                anim.SetBool("touchFloor", false);
+            }
+                
         }
 
         public void Jump()
